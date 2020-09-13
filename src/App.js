@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import Home from './Home'
 import './App.css';
+import Header from './Header'
+import Footer from './Footer'
+import {BrowserRouter as Router,Switch,Route } from 'react-router-dom';
+import SearchPage from './SearchPage'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Router>
+      
+      <Header />
+      <Switch> 
+
+        <Route path="/search"><SearchPage/></Route>
+        <Route path="/"> <Home /></Route>
+       </Switch>
+     <Footer/>
+      
+      {/*Header */}
+      {/* Banner */}
+      {/* Cards */}
+      {/* Footer */}
+      {/**these are all a part of the home page and 
+       * it will be routed to the search page */}
+    
+    </Router>
     </div>
   );
 }
